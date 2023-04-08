@@ -1,0 +1,31 @@
+SELECT * FROM obat
+    Menampilkan semua data yang ada pada tabel obat.
+
+SELECT nama_obat FROM obat WHERE stok_obat > 0
+    Menampilkan nama_obat dari obat yang memiliki stok lebih dari 0.
+
+SELECT nama_obat FROM obat WHERE tahun_kadaluarsa >2000
+
+    Menampilkan nama_obat dari obat yang kadaluarsanya diatas tahun 2000.
+
+SELECT COUNT(*) FROM transaksi WHERE jumlah_transaksi
+
+    Menampilkan jumlah total pembelian.
+
+SELECT id_pasien, SUM(jumlah_transaksi) FROM transaksi
+    Menampilkan total pembelian untuk obat.
+
+SELECT nama_obat, stok_obat FROM obat ORDER BY stok_obat DESC LIMIT 5
+    Menampilkan 5 obat dengan jumlah stok tertinggi.
+
+SELECT nama_obat, stok_obat FROM obat WHERE stok_obat < 100 ORDER BY stok_obat ASC
+    Menampilkan nama_obat dan jumlah stok untuk obat yang stok-nya kurang dari 100, diurutkan berdasarkan stok terendah.
+
+SELECT nama_pasien,tanggal_lahir_pasien FROM pasien WHERE tanggal_lahir_pasien > '2022-01-01'; 
+    Menampilkan nama pasien dan tanggal lahir pasien yang lahir diatas tanggal 1 Januari 2022.
+
+SELECT nama_pembeli,id_obat FROM pembeli 
+    Menampilkan nama pembeli dan obat yang dibeli
+    
+SELECT nama_obat, pembuat_obat, stok_obat FROM obat WHERE stok_obat < 100 OR stok_obat > 200
+    Menampilkan nama obat dan stok untuk obat yang stok-nya kurang dari 100 atau stoknya lebih dari 200.
